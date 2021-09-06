@@ -111,6 +111,8 @@ img {
 
 .menu-item {
   position: relative;
+  padding-top: 32px;
+  padding-bottom: 32px;
   color: #212121;
   font-weight: 500;
   font-size: 14px;
@@ -276,7 +278,7 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
-.button {
+.hero-button {
   display: block;
   margin-top: 30px;
   margin-left: auto;
@@ -603,4 +605,51 @@ img {
 .portfolio-thumb:hover .portfolio-overlay,
 .portfolio-thumb:focus .portfolio-overlay {
   transform: translateY(0);
+}
+/* -------BACKDROP------ */
+.backdrop {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity 250ms var(--transition-cubic);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  min-width: 528px;
+  min-height: 581px;
+  background-color: white;
+  transition: transform 250ms var(--transition-cubic);
+}
+
+.modal-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.modal-icon {
+  fill: currentColor;
 }
